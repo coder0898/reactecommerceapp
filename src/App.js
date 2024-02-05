@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import Card from './component/Card';
 
 const base_url_api = 'https://fake-store-api.mock.beeceptor.com/api/products';
 
@@ -9,7 +10,6 @@ const App = () => {
 
     useEffect(() => {
         getAPIData();
-        // console.log(productData);
     }, [])
 
     const getAPIData = async () => {
@@ -29,18 +29,9 @@ const App = () => {
                 <div className="card-container">
                     {
                         productData &&
-                        productData.map((product, index) => {
-
-                            const { image, brand, price, availability } = product;
-
+                        productData.map((product,index) => {
                             return (
-                                <div className="card" key={index}>
-                                    <img src={image} alt="image" />
-                                    <h2>{brand}</h2>
-                                    <p>{price}</p>
-                                    <p>{availability ? "in-Stock" : "out-of-Stock"}</p>
-                                    <button>Add to cart</button>
-                                </div>
+                               <Card product={product} index={index}/>
                             )
                         })
                     }
