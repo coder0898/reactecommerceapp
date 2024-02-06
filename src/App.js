@@ -33,6 +33,15 @@ const App = () => {
                 <h1>Product Listing Page</h1>
                 <div className="filter-bar">
                     <input type="search" value={queryInput} onChange={(e)=> setQueryInput(e.target.value)} placeholder='search a product'/>
+                    <br />
+                    <div className="sort-bar">
+                        <label htmlFor="sort By">Sort By:</label>
+                    <select name='sort By' id="">
+                        <option value="">select filter</option>
+                        <option value="LowToHigh">Price(Low to High)</option>
+                        <option value="HighToLow">Price(High to Low)</option>
+                    </select>
+                    </div>
                 </div>
                 <div className="card-container">
                     {

@@ -38,6 +38,29 @@ h1{
     font-size: 1.2rem;
 }
 
+.sort-bar{
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sort-bar label{
+    margin-right: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.sort-bar select{
+    height: 40px;
+    font-size: 1.2rem;
+    border:1px solid rgb(196, 196, 196);
+    border-radius: 10px;
+    outline: 0;
+    font-size: 1.2rem;
+}
+
 .card-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px , 1fr));
