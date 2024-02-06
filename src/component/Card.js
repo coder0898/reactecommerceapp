@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Card = ({ product, index }) => {
+const Card = ({ product}) => {
 
     const { image, brand, price, availability } = product;
 
     return (
-        <div key={index}>
-            <div className="card">
+        <div>
+            <div className="card" >
                 <img src={image} alt="image" />
                 <h2>{brand}</h2>
                 <p>{price}</p>

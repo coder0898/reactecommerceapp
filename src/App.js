@@ -16,7 +16,7 @@ const App = () => {
         const response = await fetch(base_url_api);
 
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
 
         setProductData(data);
     }
@@ -24,19 +24,22 @@ const App = () => {
 
     return (
         <div className='App'>
-            <section>
+            <main>
                 <h1>Product Listing Page</h1>
+                <div className="filter-bar">
+                    <input type="search" id="searchFilter" placeholder='search a product'/>
+                </div>
                 <div className="card-container">
                     {
                         productData &&
-                        productData.map((product,index) => {
+                        productData.map((product, i) => {
                             return (
-                               <Card product={product} index={index}/>
+                               <Card product={product} key={i}/>
                             )
                         })
                     }
                 </div>
-            </section>
+            </main>
         </div>
     )
 }
