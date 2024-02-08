@@ -24,7 +24,7 @@ h1{
 .filter-bar{
     text-align: center;
     padding: 20px;
-    background: rgb(196, 196, 196);
+    background: rgba(196, 196, 196,0.8);
     border-radius: 10px;
 }
 
