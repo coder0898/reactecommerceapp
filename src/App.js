@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Card from './component/Card';
-import FilterBar from './component/FilterBar';
+import ProductList from './pages/ProductList';
+import SingleProduct from './pages/SingleProduct';
+import {  RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 const base_url_api = 'https://fake-store-api.mock.beeceptor.com/api/products';
 
@@ -42,23 +43,20 @@ const App = () => {
         return sortedProduct;
     }
 
+    const router =  createBrowserRouter([
+        {
+            path:'/',
+            element:<ProductList productData={productData} transformProduct={transformProduct} queryInput={queryInput} setQueryInput={setQueryInput} setSortInput={setSortInput}/>
+        },
+        {
+            path:'/details',
+            element:<SingleProduct/>,
+        }
+    ]);
 
     return (
         <div className='App'>
-            <main>
-                <h1>Product Listing Page</h1>
-                <FilterBar queryInput = {queryInput} setQueryInput={setQueryInput} setSortInput={setSortInput}/>
-                <div className="card-container">
-                    {
-                        productData &&
-                        transformProduct().map((products, i) => {
-                            return (
-                                <Card product={products} key={i} />
-                            )
-                        })
-                    }
-                </div>
-            </main>
+            <RouterProvider router={router}/>
         </div>
     )
 }
