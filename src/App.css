@@ -63,7 +63,7 @@ h1{
 
 .card-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px , 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px , 1fr));
     gap: 50px;
     padding: 30px;
 }
@@ -105,4 +105,66 @@ h1{
     background-color: transparent;
     color: rgb(29, 40, 253);
     border: 2px solid rgb(29, 40, 253);
+}
+
+.product_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:4rem;
+    margin: 100px;
+    background-color: #FFFFFF;
+    padding: 10px;
+}
+
+.right{
+    padding: 20px;
+}
+
+.right h2{
+    font-size: 2rem;
+    font-weight: 800;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+
+.right h3{
+    font-size: 1.7rem;
+    font-weight: 800;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+}
+
+.right p{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.green{
+    color: green;
+}
+
+.red{
+    color: red;
+}
+
+.back-box{
+    margin: 10px;
+    background-color: rgb(255, 213, 0);
+    border: 0;
+    outline: 0;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 900;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    color: #FFFFFF;
+    border-radius: 10px;
 }

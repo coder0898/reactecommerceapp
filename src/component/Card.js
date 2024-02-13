@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Card = ({ product}) => {
+const Card = ({ product }) => {
 
-    const { image, brand, price, availability } = product;
+    const { product_id, image, brand, price, availability } = product;
 
     return (
         <div>
@@ -11,7 +12,7 @@ const Card = ({ product}) => {
                 <h2>{brand}</h2>
                 <p>{price}</p>
                 <p>{availability ? "in-Stock" : "out-of-Stock"}</p>
-                <button>Add to cart</button>
+                <button><Link to={`/details/${product_id}`} style={{textDecoration:"none", color:"inherit"}}>View Details</Link> </button>
             </div>
         </div>
     )

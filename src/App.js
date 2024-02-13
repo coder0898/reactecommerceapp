@@ -12,6 +12,7 @@ const App = () => {
     const [queryInput, setQueryInput] = useState('');
     const [sortInput, setSortInput] = useState('LowToHigh');
 
+
     useEffect(() => {
         getAPIData();
     }, [])
@@ -43,20 +44,22 @@ const App = () => {
         return sortedProduct;
     }
 
+
     const router =  createBrowserRouter([
         {
             path:'/',
             element:<ProductList productData={productData} transformProduct={transformProduct} queryInput={queryInput} setQueryInput={setQueryInput} setSortInput={setSortInput}/>
         },
         {
-            path:'/details',
-            element:<SingleProduct/>,
+            path:'/details/:id',
+            element:<SingleProduct productData={productData}/>,
         }
     ]);
 
     return (
         <div className='App'>
             <RouterProvider router={router}/>
+            {/* <SingleProduct productData={productData}/> */}
         </div>
     )
 }
