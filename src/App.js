@@ -12,6 +12,7 @@ const App = () => {
     const [productData, setProductData] = useState([]);
     const [queryInput, setQueryInput] = useState('');
     const [sortInput, setSortInput] = useState('LowToHigh');
+    const [cart, setCart] = useState([]);
 
 
     useEffect(() => {
@@ -46,14 +47,26 @@ const App = () => {
     }
 
 
+// adding to cart function
+   const AddToCart = (product_id, image, brand, price)=>{
+      const Obj = {
+        product_id, image, brand, price
+      };
+
+      console.log(Obj);
+
+      setCart([...cart,Obj]);
+    //   console.log("Cart = ",cart);
+   }
+
     const router =  createBrowserRouter([
         {
             path:'/',
-            element:<ProductList productData={productData} transformProduct={transformProduct} queryInput={queryInput} setQueryInput={setQueryInput} setSortInput={setSortInput}/>
+            element:<ProductList productData={productData} transformProduct={transformProduct} queryInput={queryInput} setQueryInput={setQueryInput} setSortInput={setSortInput} AddToCart={AddToCart} />
         },
         {
             path:'/details/:id',
-            element:<SingleProduct productData={productData}/>,
+            element:<SingleProduct productData={productData} AddToCart={AddToCart}/>,
         },
         {
             path:"/cart",

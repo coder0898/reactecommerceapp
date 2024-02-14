@@ -2,7 +2,8 @@ import React from 'react'
 import FilterBar from '../component/FilterBar/FilterBar';
 import Card from '../component/Card/Card';
 
-const ProductList = ({ productData, transformProduct, queryInput, setQueryInput, setSortInput }) => {
+const ProductList = ({ productData, transformProduct, queryInput, setQueryInput, setSortInput, AddToCart}) => {
+
     return (
         <div>
             <main>
@@ -13,7 +14,7 @@ const ProductList = ({ productData, transformProduct, queryInput, setQueryInput,
                         productData &&
                         transformProduct().map((products, i) => {
                             return (
-                                <Card product={products} key={i} />
+                                <Card product={products} key={i} AddToCart={AddToCart} />
                             )
                         })
                     }

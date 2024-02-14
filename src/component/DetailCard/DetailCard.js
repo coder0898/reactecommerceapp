@@ -1,9 +1,9 @@
 import React from 'react';
 import "./DetailCard.css";
 
-const DetailCard = ({ product, index }) => {
+const DetailCard = ({ product, index, AddToCart }) => {
 
-    const { image, brand, name, category, description, price, availability } = product
+    const { image, brand, name, category, description, price, availability, product_id } = product
 
     return (
         <div>
@@ -19,6 +19,7 @@ const DetailCard = ({ product, index }) => {
                     <p>Rs {price}</p>
                     <p className={availability ? "green" : "red"}>{availability ? "In-Stock" : "Out of Stock"}</p>
                 </div>
+                <button onClick={()=> AddToCart(product_id, image, brand, price)}>Add To Cart</button>
             </div>
         </div>
     )

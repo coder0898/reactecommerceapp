@@ -1,19 +1,19 @@
-.product_container{
+.product_container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap:4rem;
+    gap: 4rem;
     margin: 100px;
     background-color: #FFFFFF;
     padding: 10px;
 }
 
-.right{
+.right {
     padding: 20px;
 }
 
-.right h2{
+.right h2 {
     font-size: 2rem;
     font-weight: 800;
     font-style: italic;
@@ -21,7 +21,7 @@
     margin-bottom: 10px;
 }
 
-.right h3{
+.right h3 {
     font-size: 1.7rem;
     font-weight: 800;
     font-style: italic;
@@ -29,17 +29,35 @@
     margin-bottom: 10px;
 }
 
-.right p{
+.right p {
     font-size: 1.3rem;
     margin-bottom: 10px;
     font-style: italic;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.green{
+button {
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: rgb(29, 40, 253);
+}
+
+ button:hover{
+    background-color: transparent;
+    color: rgb(29, 40, 253);
+    border: 2px solid rgb(29, 40, 253);
+}
+
+.green {
     color: green;
 }
 
-.red{
+.red {
     color: red;
 }

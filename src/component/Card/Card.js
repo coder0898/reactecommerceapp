@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Card.css';
 
-const Card = ({ product }) => {
+const Card = ({ product, AddToCart }) => {
 
     const { product_id, image, brand, price, availability } = product;
 
@@ -14,8 +14,8 @@ const Card = ({ product }) => {
                 <p>{price}</p>
                 <p>{availability ? "in-Stock" : "out-of-Stock"}</p>
                 <div className="button-group">
-                <button><Link to={`/details/${product_id}`} style={{textDecoration:"none", color:"inherit"}}>View Details</Link> </button>
-                <button id='cart'><Link to={`/cart`} style={{textDecoration:"none", color:"inherit"}}>Add to Cart</Link> </button>
+                <Link to={`/details/${product_id}`} style={{textDecoration:"none", color:"inherit"}}><button>View Details </button></Link> 
+                <button onClick={()=> AddToCart(product_id, image, brand, price)} id='cart'>Add to Cart</button> 
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import DetailCard from '../component/DetailCard/DetailCard';
 
-const SingleProduct = ({ productData }) => {
+const SingleProduct = ({ productData, AddToCart }) => {
 
     const { id } = useParams();
 
@@ -24,7 +24,7 @@ const SingleProduct = ({ productData }) => {
                 productDetails &&
                 productDetails.map((product, index) => {
                     return (
-                        <DetailCard product={product} key={index} />
+                        <DetailCard product={product} key={index} AddToCart={AddToCart} />
                     )
                 })
             }
