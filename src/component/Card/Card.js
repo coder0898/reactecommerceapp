@@ -14,8 +14,8 @@ const Card = ({ product, AddToCart }) => {
                 <p>{price}</p>
                 <p>{availability ? "in-Stock" : "out-of-Stock"}</p>
                 <div className="button-group">
-                <Link to={`/details/${product_id}`} style={{textDecoration:"none", color:"inherit"}}><button>View Details </button></Link> 
-                <button onClick={()=> AddToCart(product_id, image, brand, price)} id='cart'>Add to Cart</button> 
+                <Link to={`/details/${product_id}`} style={{textDecoration:"none", color:"inherit"}}><button><i className="fa-solid fa-eye"></i> View Details </button></Link> 
+                <button onClick={()=> AddToCart(product_id, image, brand, price)} id='cart'><i className="fa-solid fa-cart-plus"></i> Add to Cart</button> 
                 </div>
             </div>
         </div>

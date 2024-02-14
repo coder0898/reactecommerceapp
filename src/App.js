@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import ProductList from './pages/ProductList';
 import SingleProduct from './pages/SingleProduct';
-import {  RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Route, Router, Routes } from 'react-router-dom';
 import Cart from './pages/Cart';
+import NavBar from './component/Navbar/NavBar';
 
 const base_url_api = 'https://fake-store-api.mock.beeceptor.com/api/products';
+
+
 
 const App = () => {
 
@@ -14,6 +17,7 @@ const App = () => {
     const [sortInput, setSortInput] = useState('LowToHigh');
     const [cart, setCart] = useState([]);
 
+    let cartCount = cart.length;
 
     useEffect(() => {
         getAPIData();
@@ -47,37 +51,27 @@ const App = () => {
     }
 
 
-// adding to cart function
-   const AddToCart = (product_id, image, brand, price)=>{
-      const Obj = {
-        product_id, image, brand, price
-      };
+    // adding to cart function
+    const AddToCart = (product_id, image, brand, price) => {
+        const Obj = {
+            product_id, image, brand, price
+        };
 
-      console.log(Obj);
+        console.log(Obj);
 
-      setCart([...cart,Obj]);
-    //   console.log("Cart = ",cart);
-   }
+        setCart([...cart, Obj]);
+        //   console.log("Cart = ",cart);
+    }
 
-    const router =  createBrowserRouter([
-        {
-            path:'/',
-            element:<ProductList productData={productData} transformProduct={transformProduct} queryInput={queryInput} setQueryInput={setQueryInput} setSortInput={setSortInput} AddToCart={AddToCart} />
-        },
-        {
-            path:'/details/:id',
-            element:<SingleProduct productData={productData} AddToCart={AddToCart}/>,
-        },
-        {
-            path:"/cart",
-            element:<Cart/>,
-        }
-    ]);
 
     return (
         <div className='App'>
-            <RouterProvider router={router}/>
-            {/* <SingleProduct productData={productData}/> */}
+                <NavBar cartCount={cartCount} />
+                <Routes>
+                    <Route path='/' element={<ProductList productData={productData} transformProduct={transformProduct} queryInput={queryInput} setQueryInput={setQueryInput} setSortInput={setSortInput} AddToCart={AddToCart}  cartCount={cartCount}/>} />
+                    <Route path='/details/:id' element={<SingleProduct productData={productData} AddToCart={AddToCart}/>} />
+                    <Route path='/cart' element={<Cart />} />
+                </Routes>
         </div>
     )
 }
