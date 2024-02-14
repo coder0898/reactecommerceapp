@@ -1,6 +1,6 @@
 import React from 'react'
-import FilterBar from '../component/FilterBar';
-import Card from '../component/Card';
+import FilterBar from '../component/FilterBar/FilterBar';
+import Card from '../component/Card/Card';
 
 const ProductList = ({ productData, transformProduct, queryInput, setQueryInput, setSortInput }) => {
     return (
