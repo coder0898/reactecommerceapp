@@ -3,6 +3,7 @@ import './App.css';
 import ProductList from './pages/ProductList';
 import SingleProduct from './pages/SingleProduct';
 import {  RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Cart from './pages/Cart';
 
 const base_url_api = 'https://fake-store-api.mock.beeceptor.com/api/products';
 
@@ -53,6 +54,10 @@ const App = () => {
         {
             path:'/details/:id',
             element:<SingleProduct productData={productData}/>,
+        },
+        {
+            path:"/cart",
+            element:<Cart/>,
         }
     ]);
 
