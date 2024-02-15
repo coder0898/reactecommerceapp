@@ -11,6 +11,8 @@
 
 .right {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .right h2 {
@@ -46,6 +48,7 @@ button {
     cursor: pointer;
     margin-bottom: 10px;
     background-color: rgb(29, 40, 253);
+    width: 160px;
 }
 
  button:hover{

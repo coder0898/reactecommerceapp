@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import ProductList from './pages/ProductList';
 import SingleProduct from './pages/SingleProduct';
-import { Route, Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Cart from './pages/Cart';
 import NavBar from './component/Navbar/NavBar';
+import ErrorPage from './pages/ErrorPage';
 
 const base_url_api = 'https://fake-store-api.mock.beeceptor.com/api/products';
 
@@ -70,7 +71,8 @@ const App = () => {
                 <Routes>
                     <Route path='/' element={<ProductList productData={productData} transformProduct={transformProduct} queryInput={queryInput} setQueryInput={setQueryInput} setSortInput={setSortInput} AddToCart={AddToCart}  cartCount={cartCount}/>} />
                     <Route path='/details/:id' element={<SingleProduct productData={productData} AddToCart={AddToCart}/>} />
-                    <Route path='/cart' element={<Cart />} />
+                    <Route path='/cart' element={<Cart cartCount={cartCount} cart={cart} setCart={setCart}/>} />
+                    <Route path='*' element={<ErrorPage/>}/>
                 </Routes>
         </div>
     )

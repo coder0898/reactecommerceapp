@@ -10,7 +10,7 @@ const NavBar = ({cartCount}) => {
                 <div className="title-logo">
                     <h1>React E-Cart</h1>
                 </div>
-                <div className="cart-container">
+                <div className="carts-container">
                     <Link to='/cart'>
                         <button className='cart-btn'>
                             <span><i className="fa-solid fa-cart-shopping"></i> :</span> {cartCount}
