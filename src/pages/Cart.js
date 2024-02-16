@@ -29,6 +29,15 @@ const Cart = ({ cartCount, cart, setCart }) => {
                                                 <img src={image} alt="404" />
                                                 <h2>{brand}</h2>
                                                 <p>Rs {price}</p>
+                                                <div className="counter-box">
+                                                   <select >
+                                                      <option value="1">1</option>
+                                                      <option value="2">2</option>
+                                                      <option value="3">3</option>
+                                                      <option value="4">4</option>
+                                                      <option value="5">5</option>
+                                                   </select>
+                                                </div>
                                             </div>
                                         </div>
                                     )

@@ -18,6 +18,11 @@ const DetailCard = ({ product, index, AddToCart }) => {
                     <p>{description}</p>
                     <p>Rs {price}</p>
                     <p className={availability ? "green" : "red"}>{availability ? "In-Stock" : "Out of Stock"}</p>
+                    <div className="counter-box">
+                        <button><i className="fa-solid fa-plus"></i></button>
+                        <p>0</p>
+                        <button><i className="fa-solid fa-minus"></i></button>
+                    </div>
                 <button onClick={()=> AddToCart(product_id, image, brand, price)}><i className="fa-solid fa-cart-plus"></i> Add To Cart</button>
                 </div>
             </div>
